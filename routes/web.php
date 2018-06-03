@@ -20,6 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/reportar', function () {
-    return view('report');
-});
+Route::get('/reportar', 'HomeController@report');

@@ -1,14 +1,17 @@
 <div class="panel panel-primary">
   <div class="panel-heading">Menú</div>
   <div class="panel-body">
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">
-          Cras justo odio
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus
-        </a>
-    </div>
+    <ul class="nav nav-pills nav-stacked">
+      @if (auth()->check())
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Ver Incidencia</a></li>
+        <li><a href="#">Reportar Incidencia</a></li>
+        <li><a href="#">Administración</a></li>
+      @else
+        <li><a href="#">Bienvenido</a></li>
+        <li><a href="#">Instruciones</a></li>
+        <li><a href="#">Creditos</a></li>
+      @endif
+    </ul>
   </div>
 </div>
