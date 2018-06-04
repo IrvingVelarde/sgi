@@ -21,3 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/reportar', 'HomeController@report');
+
+
+Route::group(['middleware' => ['admin'],'namespace' => 'Admin'], function () {
+	Route::get('/usuarios','UserController@index');
+	Route::get('/proyectos','ProjectController@index');
+	Route::get('/configuracion','ConfigController@index');
+});
