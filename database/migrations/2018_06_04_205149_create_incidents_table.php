@@ -15,6 +15,17 @@ class CreateIncidentsTable extends Migration
     {
         Schema::create('incidents', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('description');            
+            $table->string('severity', 1);
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('level_id')->unsigned()->nullable();
+            $table->foreign('level_id')->references('id')->on('levels');
+            $table->integer('client_id')->unsigned()->nullable();
+            $table->foreign('client_id')->references('id')->on('users');
+            $table->integer('support_id')->unsigned()->nullable();
+            $table->foreign('support_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
