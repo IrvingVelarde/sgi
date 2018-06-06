@@ -8,7 +8,8 @@
             <li @if(request()->is('ver')) class="active" @endif>
               <a href="/ver">Ver Incidencia</a></li>
           @endif
-        <li @if(request()->is('reportar')) class="active" @endif><a href="/reportar">Reportar Incidencia</a></li>
+        <li @if(request()->is('reportar')) class="active" @endif>
+          <a href="/reportar">Reportar Incidencia</a></li>
         @if (auth()->user()->is_admin)
           <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">

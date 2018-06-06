@@ -43,7 +43,17 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        @if (auth()->check())
+                        <form class="navbar-form">
+                            <div class="form-group">
+                              <select id="list-of-projects" class="form-control">
+                               {{-- @foreach (auth()->user()->list_of_projects as $project)
+                                  <option value="{{ $project->id }}" @if($project->id==auth()->user()->selected_project_id) selected @endif>{{ $project->name }}</option>
+                                @endforeach --}} 
+                              </select>
+                            </div>
+                        </form>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
